@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voss Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0e0e0e;
+            color: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #00ffc3;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        .nav-link.active {
+            color: #00ffc3;
+        }
+
+        section {
+            padding: 2rem 1rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #00ffc3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .game-card {
+            background: #1a1a1a;
+            border: 1px solid #2e2e2e;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 255, 195, 0.1);
+        }
+
+        .game-card h3 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .game-card a {
+            color: #00ffc3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            position: relative;
+            background-image: url('poster.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 3rem 1rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero button {
+            background-color: #00ffc3;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #00e6b0;
+        }
+
+        .fullscreen-btn {
+            display: inline-block;
+            background-color: #00ffc3;
+            border: none;
+            color: #000;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 1rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: #00e6b0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 60vh;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 195, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+            background: #111;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+            }
+
+            .hero-overlay {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Voss Games</h1>
+        <nav>
+            <a href="#home" class="nav-link" onclick="showSection('home')">Home</a>
+            <a href="#games" class="nav-link" onclick="showSection('games')">Game List</a>
+            <a href="#play" class="nav-link" onclick="showSection('play')">Play</a>
+            <a href="#about" class="nav-link" onclick="showSection('about')">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero">
+                <div class="hero-overlay">
+                    <h2>Deal or No Deal</h2>
+                    <p>Step into the lights, choose your case, and make the deal of a lifetime.</p>
+                    <button onclick="showSection('play')">🎮 Play Now</button>
+                </div>
+            </div>
+            <h2>Welcome to Voss Games</h2>
+            <p>Explore fun and interactive games created by Zach Voss. Designed to be entertaining, challenging, and
+                immersive. Scroll down to play or browse the full game list!</p>
+        </section>
+
+        <section id="games" style="display:none">
+            <h2>Game List</h2>
+            <div class="game-card">
+                <h3>Deal or No Deal</h3>
+                <p>Test your luck in this classic game show adaptation. Make deals or risk it all in this fast-paced
+                    decision-making experience.</p>
+                <a href="#play" onclick="showSection('play')">▶ Play Now</a>
+            </div>
+        </section>
+
+        <section id="play" style="display:none">
+            <h2>Play: Deal or No Deal</h2>
+            <button class="fullscreen-btn" onclick="toggleFullScreen('game-frame')">⛶ Fullscreen</button>
+            <iframe id="game-frame" src="https://vosszach99.github.io/deal-or-no-deal/"></iframe>
+        </section>
+
+        <section id="about" style="display:none">
+            <h2>About Voss Games</h2>
+            <p>Voss Games is a solo development brand led by Zach Voss, passionate about delivering cool browser-based
+                games. Whether it's game shows, puzzles, or action-packed adventures — more games are coming soon!</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Voss Games. All rights reserved.
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('main > section').forEach(sec => sec.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+        }
+
+        function toggleFullScreen(id) {
+            const elem = document.getElementById(id);
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // Default view
+        showSection('home');
+    </script>
+</body>
+
+</html>
